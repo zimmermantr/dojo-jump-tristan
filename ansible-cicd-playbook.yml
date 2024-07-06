@@ -16,6 +16,9 @@
         name: nginx
         state: present
 
+    - name: Remove the existing var/www/html/
+      command: rm -rf /var/www/html/
+
     - name: Git clone the repository
       git:
         repo: "{{ repo_url }}/{{ repo_name }}.git"
