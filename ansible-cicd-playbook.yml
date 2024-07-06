@@ -2,6 +2,7 @@
 - name: Install and configure Nginx
   hosts: all
   become: yes
+
   tasks:
     - name: Update ubuntu server
       apt:
@@ -16,17 +17,17 @@
         name: nginx
         state: present
 
-    - name: Remove the existing var/www/html/
+    - name: Remove the existing var/www/html
       command: rm -rf /var/www/html
 
     - name: Git clone the repository
       git:
         repo: "{{ repo_url }}/{{ repo }}.git"
-        dest: var/www/html/
+        dest: var/www/html
         version: development
         accept_hostkey: yes
 
     - name: Restart Nginx
-      service:
+      systemd:
         name: nginx
         state: restarted
