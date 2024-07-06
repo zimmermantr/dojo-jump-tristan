@@ -1,7 +1,7 @@
 ---
 - name: Install and configure Nginx
   hosts: all
-  become: yes
+  become: true
   tasks:
     - name: Update ubuntu server
       apt:
@@ -14,7 +14,7 @@
     - name: Install Nginx
       apt:
         name: nginx
-        enabled: yes
+        enabled: true
         state: started
 
     - name: Git clone the repository
