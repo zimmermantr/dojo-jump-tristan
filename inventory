@@ -2,7 +2,7 @@
 node1 ansible_host=3.15.166.165 ansible_user=ubuntu ansible_ssh_common_args='-o StrictHostKeyChecking=no'
 
 [all:vars]
-repo_url=https://github.com/zimmermantr/dojo-jump-tristan.git
+repo_url=https://github.com/zimmermantr/
 repo=dojo-jump-tristan
 home_dir=/home/ubuntu
 repo_dir={{ home_dir }}/{{ repo }}
