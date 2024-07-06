@@ -22,7 +22,7 @@
     - name: Git clone the repository
       git:
         repo: "{{ repo_url }}/{{ repo_name }}.git"
-        dest: var/www/html/{{ repo_name }}
+        dest: var/www/html/
         version: development
         accept_hostkey: yes
 
