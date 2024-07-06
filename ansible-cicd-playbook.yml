@@ -6,20 +6,24 @@
     - name: Update ubuntu server
       apt:
         update_cache: yes
+
     - name: Update all packages
       apt:
         upgrade: dist
+
     - name: Install Nginx
       apt:
         name: nginx
         enabled: yes
         state: started
+
     - name: Git clone the repository
       git:
         repo: "{{ repo_url }}/{{ repo_name }}.git"
         dest: var/www/html
         version: development
         accept_hostkey: yes
+
     - name: Restart Nginx
       service:
         name: nginx
